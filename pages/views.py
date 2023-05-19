@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm, CreateUserGroup
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from pages.models import displayUserName
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 # Create your views here.
 
@@ -54,3 +53,36 @@ def user(request):
 
     context = {'form': form, "displayUserName": displaynames}
     return render(request, 'master/user.html', context)
+
+    # user group
+@login_required(login_url='home')
+def userGroup(request):
+
+  #  form = CreateUserGroup()
+   # if request.method == 'POST':
+    #    form = CreateUserGroup(request.POST)
+     #   if form.is_valid():
+      #      form.save()
+    
+
+    #display data
+    displaynames = User.objects.all()
+    displaygroup = Group.objects.all()
+    print(displaynames)
+    print(displaygroup)
+
+    context = {'displayUserName': displaynames, 'displayGroup': displaygroup}
+    return render(request, 'master/usergroup.html', context)
+
+def sysparam(request):
+    pass
+def terminallist(request):
+    pass
+def cardtype(request):
+    pass
+def report(request):
+    pass
+def accountreport(request):
+    pass
+def registrationreport(request):
+    pass

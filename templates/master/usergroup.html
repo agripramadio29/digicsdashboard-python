@@ -27,42 +27,42 @@
   <header>
     <!-- Sidebar -->
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
-          <!--
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard Utama</span>
-          </a>
-          -->
-          Organisasi
-          <!--
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic </span>
-          </a>
-          -->
-          <a href="{% url 'user' %}" class="list-group-item list-group-item-action py-2 ripple active"><i
-              class="fas fa-user fa-fw me-3"></i><span>Daftar User</span></a>
-          <a href="{% url 'userGroup' %}" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-users fa-fw me-3"></i><span>Grup User</span></a>
-          Pengaturan
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Parameter Sistem</span>
-          </a>
-          Parameter
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-chart-bar fa-fw me-3"></i><span>Daftar Terminal</span></a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-globe fa-fw me-3"></i><span>Daftar Jenis Kartu</span></a>
-          Laporan
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-building fa-fw me-3"></i><span>Laporan</span></a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-calendar fa-fw me-3"></i><span>Laporan Pembukaan Rekening</span></a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-chart-line fa-fw me-3"></i><span>Laporan Registrasi</span></a>
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            <!--
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard Utama</span>
+            </a>
+            -->
+            Organisasi
+            <!--
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic </span>
+            </a>
+            -->
+            <a href="{% url 'user' %}" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-user fa-fw me-3"></i><span>Daftar User</span></a>
+            <a href="{% url 'userGroup' %}" class="list-group-item list-group-item-action py-2 ripple active"><i
+                class="fas fa-users fa-fw me-3"></i><span>Grup User</span></a>
+            Pengaturan
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-chart-pie fa-fw me-3"></i><span>Parameter Sistem</span>
+            </a>
+            Parameter
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-chart-bar fa-fw me-3"></i><span>Daftar Terminal</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-globe fa-fw me-3"></i><span>Daftar Jenis Kartu</span></a>
+            Laporan
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-building fa-fw me-3"></i><span>Laporan</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-calendar fa-fw me-3"></i><span>Laporan Pembukaan Rekening</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                class="fas fa-chart-line fa-fw me-3"></i><span>Laporan Registrasi</span></a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     <!-- Sidebar -->
 
     <!-- Navbar -->
@@ -106,7 +106,7 @@
         <section class="mb-4">
             <div class="card">
               <div class="card-header py-3">
-                <h5 class="mb-0 text-left"><strong>FORM MASTER USER</strong></h5>
+                <h5 class="mb-0 text-left"><strong>MASTER USER GROUP</strong></h5>
               </div>
               <div class="card-body">
                 <form method="POST" action="">
@@ -116,33 +116,15 @@
                       <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="form3Example1" style="margin-right: 78px">Username</label>
-                          {{form.username}}
+
                         </div>
                       </div>
                     </div>
                   
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                      <label class="form-label" for="form3Example3" style="margin-right: 50px">Email address</label>
-                      {{form.email}}
-                    </div>
+                      <label class="form-label" for="form3Example3" style="margin-right: 50px">Group</label>
 
-                    <!-- Role input 
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form3Example1" class="form-control" />
-                        <label class="form-label" for="form3Example1">Role</label>
-                    </div>
-                  -->
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                      <label class="form-label" for="form3Example4" style="margin-right: 80px">Password</label>
-                      {{form.password1}}
-                    </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example4" style="margin-right: 28px">Retype Password</label>
-                        {{form.password2}}
                     </div>
                     <button type="submit" class="btn btn-success" name="create-user">Save</button>
 <button type="button" class="btn btn-danger">Delete</button>
@@ -154,7 +136,7 @@
           <section class="mb-4">
             <div class="card">
               <div class="card-header py-3">
-                <h5 class="mb-0 text-left"><strong>USER</strong></h5>
+                <h5 class="mb-0 text-left"><strong>Grup User</strong></h5>
               </div>
               <div class="card-body">
                 <table class="table">
@@ -163,15 +145,19 @@
                             <th scope="col">No</th>
                             <th scope="col">Username</th>
                             <th scope="col">E-Mail</th>
+                            <th scope="col">Roles</th>
                           </tr>
                     </thead>
                     <tbody>
                         {% for no in displayUserName %}
+                        {% for group in displayUserGroup %}
                         <tr>
                           <th scope="row">{{ forloop.counter }}</th>
                           <td>{{no.username}}</td>
                           <td>{{no.email}}</td>
+                          <td>{{group}}</td>
                         </tr>
+                        {% endfor %}
                         {% endfor %}
                       </tbody>
                   </table>

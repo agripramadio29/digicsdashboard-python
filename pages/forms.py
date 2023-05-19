@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 # user form
@@ -21,3 +21,20 @@ class CreateUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class CreateUserGroup(UserCreationForm):
+
+#    username = forms.CharField(max_length=50, required=True)
+    group = forms.CharField(max_length=10, required=True)
+
+    class Meta:
+        model = Group
+        fields = ['group']
+
+
+    def save(self, commit=True):
+        group = super(CreateUserGroup, self).save(commit=False)
+        group.group = self.cleaned_data['group']
+        if commit:
+            group.save()
+        return group
