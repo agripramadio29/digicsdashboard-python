@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0']
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://103.174.115.29']
 
 
 # Application definition
@@ -130,7 +130,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/images/'
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = '/home/afryanto/app/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
