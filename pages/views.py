@@ -14,11 +14,17 @@ def home(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(username)
-        print(password)
+
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            # if request.POST.get('password') != password:
+            #     messages.info(request, 'Password is Incorrect!')
+            #     return render(request, 'index.html', {})
+            # elif request.POST.get('username') != username:
+            #     messages.info(request, 'Username is Incorrect!')
+            #     return render(request, 'index.html', {})
+            # else:
             login(request, user)
             return redirect('dashboard')
         else:
