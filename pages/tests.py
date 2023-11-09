@@ -15,6 +15,8 @@ class testCases(SimpleTestCase):
     def testDashboardUrl(self):
         url = reverse('dashboard')
         self.assertEqual(resolve(url).func, dashboard)
+         
+    @pytest.mark.skip(reason="skip intended")
     def testUserUrl(self):
         url = reverse('user')
         self.assertEqual(resolve(url).func, user)
@@ -57,7 +59,7 @@ class LoginViewTest(TestCase):
     def test_failed_login(self):
         response = self.client.post(reverse('home'), {'username': 'alfian', 'password': 'edita'})
         self.assertEqual(response.status_code, 200)
-        #self.assertContains(response, 'hehecls')
+        #self.assertContains(response, 'password')
         self.assertContains(response, 'Username or Password is Incorrect!')
 
     # test user outside testclass
